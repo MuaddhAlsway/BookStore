@@ -1,0 +1,39 @@
+.author-details {
+  min-height: 100vh;
+  background: #0f172a;
+  padding: 40px;
+ 
+  color: white;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.details-card {
+  display: flex;
+  gap: 30px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.details-card img {
+  width: 250px;
+  border-radius: 15px;
+}
+
+.details-info h1 {
+  margin-bottom: 10px;
+}
+
+.details-info p {
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}

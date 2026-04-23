@@ -1,0 +1,88 @@
+/* ===== Container ===== */
+.banner-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  background: transparent;
+}
+
+/* ===== Banner Base ===== */
+.banner {
+  flex: 1;
+  height: 220px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.banner:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Left Banner ===== */
+.left-banner {
+  background: linear-gradient(135deg, #111, #01264b);
+}
+
+/* ===== Right Banner ===== */
+.right-banner {
+  background: linear-gradient(135deg, #01264b, #111);
+}
+
+/* ===== Content ===== */
+.banner-content {
+  z-index: 2;
+}
+
+.banner-content h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+/* ===== Button ===== */
+.banner-content button {
+  background: white;
+  color: #111;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.banner-content button:hover {
+  background: #e5e7eb;
+}
+
+/* ===== Optional Overlay Glow ===== */
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.05);
+  top: -50%;
+  left: -50%;
+  transform: rotate(25deg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+  }
+}

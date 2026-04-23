@@ -1,0 +1,116 @@
+.newest {
+  padding: 80px;
+  background: radial-gradient(circle at top, #111, #050505);
+}
+
+/* TITLE */
+.section-title {
+  font-size: 34px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(90deg, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GRID */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+/* CARD */
+.book-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+
+  transition: all 0.4s ease;
+}
+
+/* HOVER */
+.book-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+  border-color: rgba(244, 160, 14, 0.4);
+}
+
+/* IMAGE */
+.book-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* IMAGE ZOOM */
+.book-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY (premium feel) */
+.book-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.1),
+    transparent
+  );
+}
+
+/* TEXT CONTAINER */
+.book-card h3,
+.book-card p {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  z-index: 2;
+}
+
+/* TITLE */
+.book-card h3 {
+  bottom: 40px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* PRICE */
+.book-card p {
+  bottom: 15px;
+  font-size: 14px;
+  color: #f4a00e;
+  font-weight: 600;
+}
+
+/* BADGE */
+.book-card::before {
+  content: "NEW";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+
+  background: linear-gradient(135deg, #ff4d4d, #ff9900);
+  padding: 5px 10px;
+  font-size: 11px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+}
