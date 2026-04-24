@@ -407,7 +407,152 @@ export const reviews = [
   }
 ];
 
-
+export const readingSchedule = [
+  {
+    id: 1,
+    bookId: 101,
+    bookTitle: "Clean Code",
+    author: "Robert C. Martin",
+    image: "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg",
+    date: "2026-04-25",
+    time: "20:00",
+    pagesPlanned: 25,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 2,
+    bookId: 102,
+    bookTitle: "Atomic Habits",
+    author: "James Clear",
+    image: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+    date: "2026-04-26",
+    time: "18:30",
+    pagesPlanned: 20,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 3,
+    bookId: 103,
+    bookTitle: "The Pragmatic Programmer",
+    author: "Andrew Hunt",
+    image: "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg",
+    date: "2026-04-27",
+    time: "21:00",
+    pagesPlanned: 30,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 4,
+    bookId: 104,
+    bookTitle: "You Don't Know JS Yet",
+    author: "Kyle Simpson",
+    image: "https://covers.openlibrary.org/b/isbn/9781091210092-L.jpg",
+    date: "2026-04-28",
+    time: "19:00",
+    pagesPlanned: 15,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 5,
+    bookId: 105,
+    bookTitle: "Deep Work",
+    author: "Cal Newport",
+    image: "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg",
+    date: "2026-04-29",
+    time: "20:30",
+    pagesPlanned: 20,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 6,
+    bookId: 106,
+    bookTitle: "The Lean Startup",
+    author: "Eric Ries",
+    image: "https://covers.openlibrary.org/b/isbn/9780307887894-L.jpg",
+    date: "2026-04-30",
+    time: "18:00",
+    pagesPlanned: 25,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 7,
+    bookId: 107,
+    bookTitle: "Start With Why",
+    author: "Simon Sinek",
+    image: "https://covers.openlibrary.org/b/isbn/9781591846444-L.jpg",
+    date: "2026-05-01",
+    time: "19:30",
+    pagesPlanned: 18,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 8,
+    bookId: 108,
+    bookTitle: "Zero to One",
+    author: "Peter Thiel",
+    image: "https://covers.openlibrary.org/b/isbn/9780804139298-L.jpg",
+    date: "2026-05-02",
+    time: "21:00",
+    pagesPlanned: 22,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 9,
+    bookId: 109,
+    bookTitle: "Refactoring",
+    author: "Martin Fowler",
+    image: "https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg",
+    date: "2026-05-03",
+    time: "20:00",
+    pagesPlanned: 28,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 10,
+    bookId: 110,
+    bookTitle: "Design Patterns",
+    author: "Erich Gamma",
+    image: "https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg",
+    date: "2026-05-04",
+    time: "19:00",
+    pagesPlanned: 30,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 11,
+    bookId: 111,
+    bookTitle: "Think and Grow Rich",
+    author: "Napoleon Hill",
+    image: "https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg",
+    date: "2026-05-05",
+    time: "18:30",
+    pagesPlanned: 20,
+    pagesRead: 0,
+    status: "pending"
+  },
+  {
+    id: 12,
+    bookId: 112,
+    bookTitle: "The Psychology of Money",
+    author: "Morgan Housel",
+    image: "https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg",
+    date: "2026-05-06",
+    time: "21:30",
+    pagesPlanned: 18,
+    pagesRead: 0,
+    status: "pending"
+  }
+];
 
 
 

@@ -11,10 +11,27 @@ import Testimonial from "../component/Testimonial";
 import Footer from "../component/Footer";
 import ReadingSchedule from "../component/ReadingSchedule";
 import RecommendedBooks from "../component/RecommendedBooks";
+import { useState } from "react";
+import { readingSchedule } from "../assets/assest";
 
 function Home() {
   const navigate = useNavigate();
+ const [sessions, setSessions] = useState(readingSchedule);
 
+  // ✅ update function
+  const updateSession = (id) => {
+    setSessions((prev) =>
+      prev.map((s) =>
+        s.id === id
+          ? {
+              ...s,
+              status: "completed",
+              pagesRead: s.pagesPlanned,
+            }
+          : s
+      )
+    );
+  };
   const handleSelectBook = (book) => {
     navigate(`/book/${book.id}`);
   };
@@ -29,7 +46,8 @@ function Home() {
       <Author authors={authors}/>
      <BigBanner/>
      <Testimonial reviews={reviews}/>
-     <ReadingSchedule/>
+       
+  
 
      <Footer/>
     </div>

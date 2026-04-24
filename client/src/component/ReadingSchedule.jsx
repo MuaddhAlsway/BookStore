@@ -1,77 +1,73 @@
 import "./ReadingSchedule.css";
 
-function ReadingSchedule() {
-  const schedule = [
-    {
-      day: "Monday",
-      sessions: [
-        { time: "6:30 PM", task: "Clean Code (Technical)" },
-        { time: "9:30 PM", task: "English Reading" },
-      ],
-    },
-    {
-      day: "Tuesday",
-      sessions: [
-        { time: "6:30 PM", task: "JavaScript Book" },
-        { time: "9:30 PM", task: "Light Reading" },
-      ],
-    },
-    {
-      day: "Wednesday",
-      sessions: [
-        { time: "6:30 PM", task: "SICP Study" },
-        { time: "9:30 PM", task: "Review Notes" },
-      ],
-    },
-    {
-      day: "Thursday",
-      sessions: [
-        { time: "6:30 PM", task: "Project + Reading" },
-        { time: "9:30 PM", task: "Light Book" },
-      ],
-    },
-    {
-      day: "Friday",
-      sessions: [
-        { time: "10:00 AM", task: "Deep Reading (2 hrs)" },
-        { time: "6:00 PM", task: "Summary + Notes" },
-      ],
-    },
-    {
-      day: "Saturday",
-      sessions: [
-        { time: "10:00 AM", task: "Technical Reading" },
-        { time: "6:00 PM", task: "Light Reading" },
-      ],
-    },
-    {
-      day: "Sunday",
-      sessions: [
-        { time: "6:00 PM", task: "Weekly Review" },
-      ],
-    },
-  ];
-
+export default function ReadingSchedule({ sessions = [], updateSession }) {
   return (
-    <div className="schedule">
-      <h2 className="schedule__title">📅 Reading Schedule</h2>
+    <div className="schedule-container">
+      <h2 className="schedule-title">📚 Your Reading Schedule</h2>
 
-      <div className="schedule__grid">
-        {schedule.map((day, index) => (
-          <div className="schedule__card" key={index}>
-            <h3>{day.day}</h3>
+      <div className="schedule-grid">
+        {sessions.map((book) => {
+          // ✅ Safe progress calculation
+          const progress = book.pagesPlanned
+            ? Math.min((book.pagesRead / book.pagesPlanned) * 100, 100)
+            : 0;
 
-            {day.sessions.map((session, i) => (
-              <div className="session" key={i}>
-                <span className="time">{session.time}</span>
-                <span className="task">{session.task}</span>
+          return (
+            <div className="schedule-card" key={book.id}>
+              
+              {/* ✅ Cover with fallback + overlay */}
+              <div className="cover">
+                <img
+                  src={book.image}
+                  alt={book.bookTitle}
+                  onError={(e) => {
+                    e.target.src = "/fallback.jpg"; // put image in public/
+                  }}
+                />
+                <div className="overlay">
+                  <p>Read Now</p>
+                </div>
               </div>
-            ))}
-          </div>
-        ))}
+
+              {/* ✅ Info */}
+              <div className="info">
+                <h3>{book.bookTitle}</h3>
+                <p className="author">{book.author}</p>
+
+                <p className="time">
+                  📅 {book.date} • ⏰ {book.time}
+                </p>
+
+                <p className="pages">
+                  {book.pagesRead} / {book.pagesPlanned} pages
+                </p>
+
+                {/* ✅ Progress */}
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{ width: `${progress}%` }}
+                  ></div>
+                </div>
+
+                {/* ✅ Button / Status */}
+                {book.status === "pending" ? (
+                  <button
+                    onClick={() => updateSession(book.id)}
+                    className="complete-btn"
+                  >
+                    {book.pagesRead > 0
+                      ? "Finish Reading"
+                      : "Start Reading"}
+                  </button>
+                ) : (
+                  <span className="done">✅ Completed</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
-
-export default ReadingSchedule;
